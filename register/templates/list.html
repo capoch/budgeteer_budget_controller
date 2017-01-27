@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-8 col-sm-offset 3">
+    <table class="table">
+      <tr>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>AmountHome</th>
+        <th>Comments</th>
+      </tr>
+      {% for entry in entrylist %}
+      <tr>
+        <td>{{ entry.date }}</td>
+        <td>{{ entry.category }}</td>
+        <td>{{ entry.amount }}{{ entry.currency }}</td>
+        <td>{{ entry.amount_out }}{{ entry.curr_out }}</td>
+        <td>{{ entry.comments }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

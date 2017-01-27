@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div ="row" class="input-form">
+  <div "col-sm-8 col-sm-offset-3">
+    <form method="POST" action="">{% csrf_token %}
+      {{ form.as_p }}
+      <input class="entryButton" type="submit" value="Submit!" />
+    </form>
+  </div>
+</div>
+{% endblock %}

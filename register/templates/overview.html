@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-4 col-sm-offset 1">
+    <form method='GET' action=".">
+      <div class="input-group">
+        <input type="date" name="d_from" class="form-control" placeholder="Date from..." value="{{ request.GET.q_from }}"/>
+        <input type="date" name="d_to" class="form-control" placeholder="Date to..." value="{{ request.GET.q_to }}"/>
+        <input type="text" name="curr" class="form-control" placeholder="Curency..." value="{{ request.GET.q_curr }}"/>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">Search <i class="fa fa-search"></i></button>
+        </span>
+      </div><!-- /input-group -->
+    </form>
+  </div>
+  <div class="col-sm-6 col-sm-offset 1">
+      {{ data|safe }}
+  </div>
+</div>
+
+
+{% endblock %}
