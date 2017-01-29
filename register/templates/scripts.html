@@ -1,0 +1,19 @@
+<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.dataframe').addClass("table table-condensed");
+  $('thead th').each(function(){
+    var html = $(this).html();
+    var url = "{% url 'cat_view' %}?cat=" + html;
+    $(this).html('<a href="' + url + '">'+ html +'</a>');
+    });
+  $('tbody tr th').each(function(){
+    $(this).html('<a href="{% url "date_view" %}">' + $(this).html() + '</a>')
+    });
+  $('#id_category').after('<span><a href="{% url "add_cat" %}">Add Category</a></span>')
+});
+</script>

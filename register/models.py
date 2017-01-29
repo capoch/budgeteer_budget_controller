@@ -7,7 +7,7 @@ from django_pandas.managers import DataFrameManager
 # Create your models here.
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=50)
+    category_name = models.CharField(max_length=50, unique=True)
     category_desc = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):

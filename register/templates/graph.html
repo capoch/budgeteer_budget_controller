@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+{% load chartit %}
+
+  <div id='container'>{{ rainpivchart|load_charts:"container" }} </div>
+{% endblock %}

@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #3rd party
+    'chartit',
     #own
-    'register'
+    'register',
 ]
 
 MIDDLEWARE = [
